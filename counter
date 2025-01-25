@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        /* Basic styling for the counter */
+        .counter-container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        .count {
+            font-size: 2em;
+            margin: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter-container">
+        <!-- Displaying the counter value -->
+        <div id="counter" class="count">0</div>
+        
+        <!-- Buttons to add and subtract from the counter -->
+        <button onclick="changeCounter(1)">Add</button>
+        <button onclick="changeCounter(-1)">Subtract</button>
+    </div>
+
+    <script>
+        // Initialize the counter value
+        let count = 0;
+
+        // Function to update the counter display
+        function updateDisplay() {
+            // Get the element where the counter value is shown and update its text
+            document.getElementById("counter").textContent = count;
+        }
+
+        // Function to change the counter value based on the argument passed (either add or subtract)
+        function changeCounter(amount) {
+            // Update the count by the given amount (1 for add, -1 for subtract)
+            count += amount;
+            
+            // Call the updateDisplay function to refresh the counter on the page
+            updateDisplay();
+        }
+    </script>
+
+</body>
+</html>
